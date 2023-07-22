@@ -11,7 +11,7 @@ import { Op } from 'sequelize';
 //import { sequelize_mysql } from '../instances/mysql';
 
 export const home = async (req: Request, res: Response)=>{
-    //busca nomf com operador like
+    //busca nome com operador like
     //let searchName: string = 'Al' -- vide seção de operador like abaixo
 
     /************************
@@ -33,10 +33,12 @@ export const home = async (req: Request, res: Response)=>{
 
     // create
 
+    /*  
     const user = await User.create({
         name:   'katelyn',
         age:    27
-    });
+    }); 
+    */
 
     /*=============== END OF INSERT COM SEQUELIZE ==============*/
     
@@ -94,7 +96,11 @@ export const home = async (req: Request, res: Response)=>{
         }
         */
         attributes: ['name', 'age'],
-        where: {age: 33}
+        where: {
+            age: {
+                [Op.gte]: [1]
+            }
+        }
     });
 
     console.log(JSON.stringify(users));
@@ -117,7 +123,6 @@ export const home = async (req: Request, res: Response)=>{
         console.log("Connection pg error: ", error);
     }
     */
-
     
     
     let age: number = 90;

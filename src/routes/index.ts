@@ -15,4 +15,7 @@ router.get('/nome', UserController.nome);
 router.get('/idade', UserController.idadeForm);
 router.post('/idade-resultado', UserController.idadeAction);
 
+//Rota particular
+router.post('/newuser', UserController.usersCreate);
+
 export default router;
