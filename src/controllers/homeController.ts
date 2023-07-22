@@ -14,6 +14,32 @@ export const home = async (req: Request, res: Response)=>{
     //busca nomf com operador like
     //let searchName: string = 'Al' -- vide seção de operador like abaixo
 
+    /************************
+     * INSERT COM SEQUELIZE *
+     ************************/
+
+    // build + save
+
+    /*      
+    const user = User.build({
+        name: 'Ashley'
+    });
+
+    let idade: number = 32;
+    user.age = idade //Atribuindo valor à atributo após instanciar const user usando build + save
+    
+    await user.save(); 
+    */
+
+    // create
+
+    const user = await User.create({
+        name:   'katelyn',
+        age:    27
+    });
+
+    /*=============== END OF INSERT COM SEQUELIZE ==============*/
+    
     
 
     //*********  SELECT COM SEQUELIZE ****************

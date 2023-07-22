@@ -1,36 +1,34 @@
-{{>partials/header}}
-
-Opa {{name}} {{lastName}}, tudo bem?
-{{#showOld}}
-    Como vai a vida?
-{{/showOld}}
-{{^showOld}}
-    Beleza?
-{{/showOld}}
+{{>partials/header}} Opa {{name}} {{lastName}}, tudo bem? {{#showOld}} Como vai a vida? {{/showOld}} {{^showOld}} Beleza? {{/showOld}}
 
 <hr/>
 <h2>Produtos</h2>
 <ul>
-    {{#products}}
-        {{>partials/productItem}}
-    {{/products}}
+    {{#products}} {{>partials/productItem}} {{/products}}
 </ul>
 
 <hr/>
 <h2>Produtos a partir de R$ 12</h2>
 <ul>
-    {{#expensives}}
-        {{>partials/productItem}}
-    {{/expensives}}
+    {{#expensives}} {{>partials/productItem}} {{/expensives}}
 </ul>
 
 <hr/>
 
 <h2> Users </h2>
+
+<hr>
+
+<fieldset>
+    <legend>Novo usuário</legend>
+    <form method="POST" action="/newuser">
+        <input type="text" name="name" placeholder="Digite um nome" /><br>
+        <input type="text" name="age" placeholder="Digite a idade" /><br>
+        <input type="submit" value="Salvar usuário">
+    </form>
+</fieldset>
+
 <ul>
-    {{#users}}
-        {{name}} - {{age}}, 
-    {{/users}}
+    {{#users}} {{name}} - {{age}}, {{/users}}
 </ul>
 
 
@@ -38,11 +36,8 @@ Opa {{name}} {{lastName}}, tudo bem?
 
 <ul>
     {{#frasesDoDia}}
-        <li>{{.}}</li>
-    {{/frasesDoDia}}
-    {{^frasesDoDia}}
-        Não há frases motivacionais hoje.
-    {{/frasesDoDia}}
+    <li>{{.}}</li>
+    {{/frasesDoDia}} {{^frasesDoDia}} Não há frases motivacionais hoje. {{/frasesDoDia}}
 </ul>
 
 {{>partials/footer}}
