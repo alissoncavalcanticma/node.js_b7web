@@ -14,7 +14,9 @@ export const home = async (req: Request, res: Response)=>{
     //busca nomf com operador like
     //let searchName: string = 'Al' -- vide seção de operador like abaixo
 
-    //Select com Sequelize
+    
+
+    //*********  SELECT COM SEQUELIZE ****************
     let users = await User.findAll({
         //attributes: [['name', 'nome'], ['age', 'idade'], exclude:['id']],
         //SELECT `name` AS `nome`, `age` AS `idade` FROM `users` AS `User` WHERE `User`.`age` = 33;
