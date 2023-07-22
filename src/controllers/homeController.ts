@@ -14,6 +14,7 @@ export const home = async (req: Request, res: Response)=>{
     //busca nomf com operador like
     //let searchName: string = 'Al' -- vide seção de operador like abaixo
 
+    //Select com Sequelize
     let users = await User.findAll({
         //attributes: [['name', 'nome'], ['age', 'idade'], exclude:['id']],
         //SELECT `name` AS `nome`, `age` AS `idade` FROM `users` AS `User` WHERE `User`.`age` = 33;
@@ -47,6 +48,21 @@ export const home = async (req: Request, res: Response)=>{
                 //[Op.like]:    'Al%'   // name LIKE 'AL%'
                 //[Op.like]:    '%${searchName}%'   // name LIKE '%Al%'
             }
+        }
+        */
+        //Usando ordenação e limitação/paginação
+        /*
+        where: {
+            age: {
+                [Op.gte]: [30]
+            },
+            //order: ['name'] -> sem especificar o tipo asc ou desc
+            order: [
+                ['age', 'DESC'],
+                ['name', 'ASC']
+            ],
+            offset: 2,  //paginação
+            limit: 2    //limitação
         }
         */
         attributes: ['name', 'age'],
