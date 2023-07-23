@@ -37,7 +37,6 @@ export const usersCreate = async (req: Request, res: Response) => {
     let nameReq = req.body.name as String;
     let ageReq = req.body.age as Number;
     
-    let nameDefault = "Alisson" + 33 + randomInt(2);
     //Usando create
     /*     
         await User.create({
