@@ -11,6 +11,57 @@ import { Op } from 'sequelize';
 //import { sequelize_mysql } from '../instances/mysql';
 
 export const home = async (req: Request, res: Response)=>{
+    /****************
+     * DELETE USERS *
+     ****************/
+
+    /* 
+    await User.destroy({
+        where:{
+            //pode usar o Op aqui tb
+            id: [15, 16, 18]
+        }
+    }); 
+    */
+   
+    /*==== END OF SECTION ====*/
+    
+
+    /********************
+     * UPDATE USERS *
+     ********************/
+
+    //Update all --  preferi esse metodo
+    /*  
+    await User.update({age: 21}, {
+        where:{
+            age: {
+                [Op.eq]: 18
+            }
+            // específico
+            //age: 4
+        }
+    }); 
+    */
+   //Update específico, outra forma
+    /* 
+    let results = await User.findAll({
+        where:{
+            id:12
+        }
+    });
+    if(results.length > 0){
+        let usuario = results[0];
+
+        usuario.age = 40;
+        usuario.save()
+    }
+    */
+
+    /*=============== END OF UPDATE USERS ===================*/
+    
+    
+    
     //busca nome com operador like
     //let searchName: string = 'Al' -- vide seção de operador like abaixo
 
