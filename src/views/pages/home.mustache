@@ -27,11 +27,20 @@
     </form>
 </fieldset>
 
-<ul>
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Age</th>
+        <th>Actions</th>
+    </tr>
     {{#users}}
-    <li>{{name}} - {{age}}</li>
+    <tr>
+        <td>{{name}} - Primeira letra: {{firstLetterOfName}}</td>
+        <td>{{age}}</td>
+        <td><button><a href="/user/{{id}}/addAge">+</a></button> / <button><a href="/user/{{id}}/subtractAge">-</a></button> / <button><a href="/user/{{id}}/delete">Excluir</a></button></td>
+    </tr>
     {{/users}}
-</ul>
+</table>
 
 
 ===============================

@@ -15,7 +15,10 @@ router.get('/nome', UserController.nome);
 router.get('/idade', UserController.idadeForm);
 router.post('/idade-resultado', UserController.idadeAction);
 
-//Rota particular
+//Minhas rotas
 router.post('/newuser', UserController.usersCreate);
+router.get('/user/:id/addAge', UserController.addAge);
+router.get('/user/:id/subtractAge', UserController.subtractAge);
+router.get('/user/:id/delete', UserController.deleteUser)
 
 export default router;

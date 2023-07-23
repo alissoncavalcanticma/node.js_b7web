@@ -23,7 +23,7 @@ export const home = async (req: Request, res: Response)=>{
         }
     }); 
     */
-   
+
     /*==== END OF SECTION ====*/
     
 
@@ -95,7 +95,7 @@ export const home = async (req: Request, res: Response)=>{
     
     
 
-    //*********  SELECT COM SEQUELIZE ****************
+    //********* LIST SELECT COM SEQUELIZE ****************
     let users = await User.findAll({
         //attributes: [['name', 'nome'], ['age', 'idade'], exclude:['id']],
         //SELECT `name` AS `nome`, `age` AS `idade` FROM `users` AS `User` WHERE `User`.`age` = 33;
@@ -146,7 +146,7 @@ export const home = async (req: Request, res: Response)=>{
             limit: 2    //limitação
         }
         */
-        attributes: ['name', 'age'],
+        attributes: ['id', 'name', 'age'],
         where: {
             age: {
                 [Op.gte]: [1]
